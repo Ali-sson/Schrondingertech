@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Navigation bar background: #0072CE (Primary Blue)
 
 Nav text/link color: #FFFFFF
@@ -153,3 +154,160 @@ header {
 .dropdown i {
   margin-left: 0.2rem;
 }
+=======
+/* Navigation bar background: #0072CE (Primary Blue)
+
+Nav text/link color: #FFFFFF
+
+Buttons:
+
+Background: #0072CE
+
+Text: #FFFFFF
+
+Hover: #005B9F
+
+Main background: #FFFFFF or #E6F0FA
+
+Card background: #FFFFFF
+
+Footer:
+
+Background: #1C1C1C
+
+Text: #FFFFFF
+
+Headings: #1A1A1A
+
+Paragraph text: #666666 */
+
+:root {
+  /* Brand Colors */
+  --primary-blue: #0072CE;
+  --dark-blue: #005B9F;
+  --accent-light: #E6F0FA;
+
+  /* Text Colors */
+  --text-dark: #1A1A1A;
+  --text-light: #FFFFFF;
+  --text-gray: #666666;
+
+  /* UI Backgrounds */
+  --background-light: #FFFFFF;
+  --background-accent: #E6F0FA;
+  --footer-bg: #1C1C1C;
+
+  /* UI Elements */
+  --hover-bg: #005B9F;
+  --border-color: #CCCCCC;
+}
+
+* {
+  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Arial', sans-serif;
+
+}
+
+html {
+    font-size: 62.5%; 
+}
+
+body {
+  background-color: var(--background-light);
+  color: var(--text-dark);
+}
+
+
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  margin-top: 0;
+  font-weight: 600;
+  line-height: 1.3;
+   color: var(--text-dark);
+}
+
+/* Headings */
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+/* Paragraphs */
+p {
+  margin-bottom: 1.2rem;
+  color: var(--text-gray);
+}
+
+/* Links */
+a {
+  color: var(--text-color);
+  text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+
+a:hover {
+  color: var(--primary-blue);
+  text-decoration: underline;
+}
+
+/* Header Styles */
+
+header {
+  background-color: var(--background-accent);
+  color: var(--text-light);
+
+  padding: 1rem 2rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: var(--text-color);
+  gap: 30rem;
+}
+
+.logo img {
+    width: 70%;
+    height: auto;
+}
+
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-left: 100px;
+  margin: 0;
+  padding: 0;
+}
+
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--main-blue);
+}
+
+.dropdown i {
+  margin-left: 0.2rem;
+}
+>>>>>>> 4a364a4a3a83b7a03a1d56eadfc5609dec32df65
