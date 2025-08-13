@@ -616,14 +616,17 @@ letter-spacing: -1px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 40px;
+    overflow-x: auto;
+
   }
   
   .awards-logos img {
     width: 100px;
     height: auto;
     max-width: 8rem;
+    flex-shrink: 0;
     /* filter: grayscale(100%);
     transition: filter 0.3s ease; */
   }
@@ -943,17 +946,18 @@ footer p {
       align-items: center;
     }
 
-    .awards-logos {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 29px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+     .awards-logos {
+    display: flex;
+    flex-wrap: nowrap;   /* keep logos in one row */
+    overflow-x: auto;  /* hide horizontal scrollbar */
+    scroll-behavior: smooth;
+    gap: 40px;
   }
 
-  /* Hide scrollbar */
-  .awards-logos::-webkit-scrollbar {
-    display: none;
+  .awards-logos img {
+    flex-shrink: 0;      /* prevent shrinking */
+    width: 100px;
+    height: auto;
   }
 }
 

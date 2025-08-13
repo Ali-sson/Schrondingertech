@@ -43,28 +43,57 @@ counters.forEach(counter => {
   animate();
 });
 
-// 
+// // 
+// function autoSlideAwards() {
+//   const container = document.querySelector('.awards-logos');
+
+//   if (window.innerWidth <= 900) {
+//     let scrollAmount = 0;
+//     const scrollStep = 100; // px per step
+//     const maxScroll = container.scrollWidth - container.clientWidth;
+
+//     setInterval(() => {
+//       if (scrollAmount >= maxScroll) {
+//         scrollAmount = 0;
+//       } else {
+//         scrollAmount += scrollStep;
+//       }
+//       container.scrollTo({
+//         left: scrollAmount,
+//         behavior: 'smooth'
+//       });
+//     }, 2000); // every 2 seconds
+//   }
+// }
+
+// autoSlideAwards();
+// window.addEventListener('resize', autoSlideAwards);
+let awardInterval;
+
 function autoSlideAwards() {
+  clearInterval(awardInterval); // stop any previous scrolling
+
   const container = document.querySelector('.awards-logos');
+  if (!container) return;
 
   if (window.innerWidth <= 900) {
     let scrollAmount = 0;
-    const scrollStep = 100; // px per step
+    const scrollStep = 120; // pixels per step
     const maxScroll = container.scrollWidth - container.clientWidth;
 
-    setInterval(() => {
-      if (scrollAmount >= maxScroll) {
-        scrollAmount = 0;
-      } else {
-        scrollAmount += scrollStep;
-      }
+    awardInterval = setInterval(() => {
+      scrollAmount = (scrollAmount >= maxScroll) ? 0 : scrollAmount + scrollStep;
       container.scrollTo({
         left: scrollAmount,
         behavior: 'smooth'
       });
-    }, 2000); // every 2 seconds
+    }, 2000);
   }
 }
+
+autoSlideAwards();
+window.addEventListener('resize', autoSlideAwards);
+
 
 autoSlideAwards();
 window.addEventListener('resize', autoSlideAwards);
