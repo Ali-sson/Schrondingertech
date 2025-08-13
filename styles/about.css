@@ -537,7 +537,6 @@ letter-spacing: -1px;
 
 /* What we offer  */
 
-
     .section {
       text-align: center;
       padding: 40px 20px;
@@ -557,7 +556,9 @@ letter-spacing: -1px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      align-items: center;
       gap: 20px;
+
     }
 
     .card {
@@ -567,7 +568,7 @@ letter-spacing: -1px;
       width: 300px;
       overflow: hidden;
       transition: transform 0.3s ease;
-        margin-bottom: 2rem;
+      margin-bottom: 2rem;
     }
 
     .card img {
@@ -616,17 +617,14 @@ letter-spacing: -1px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;
-    gap: 40px;
-    overflow-x: auto;
-
+    flex-wrap: wrap;
+    gap: 460px;
   }
   
   .awards-logos img {
     width: 100px;
     height: auto;
     max-width: 8rem;
-    flex-shrink: 0;
     /* filter: grayscale(100%);
     transition: filter 0.3s ease; */
   }
@@ -637,9 +635,6 @@ letter-spacing: -1px;
 
   /* News and update */
 
-  
-
-/* Blog */
 
 .blog-resources {
     padding: 60px 20px;
@@ -932,9 +927,9 @@ footer p {
   /* Card */
 
     .card {
-        width: 100%;
+        width: 70%;
         max-width: 500px;
-        margin: 10px;
+        margin: 1rem auto;
     }
 
     .card img {
@@ -946,18 +941,21 @@ footer p {
       align-items: center;
     }
 
-     .awards-logos {
-    display: flex;
-    flex-wrap: nowrap;   /* keep logos in one row */
-    overflow-x: auto;  /* hide horizontal scrollbar */
-    scroll-behavior: smooth;
-    gap: 40px;
+    .awards-logos {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 30px;
   }
 
-  .awards-logos img {
-    flex-shrink: 0;      /* prevent shrinking */
-    width: 100px;
-    height: auto;
+  /* Hide scrollbar */
+  .awards-logos::-webkit-scrollbar {
+    display: none;
+  }
+
+  .resource-articles{
+    width: 70%;
+    margin: 0 auto;
+   
   }
 }
 
