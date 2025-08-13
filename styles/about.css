@@ -961,4 +961,8 @@ footer p {
   html {
     font-size: 40%; /* 1rem = 6.4px */
   }
+
+  .hero-carousel {
+    height: 80vh;
+  }
 }
