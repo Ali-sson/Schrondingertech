@@ -47,10 +47,7 @@ ml('account', 'YOUR_ACCOUNT_ID');
       </div>
     </div>
     <div class="language">
-      <select>
-        <option>English</option>
-        <option>Chinese</option>
-      </select>
+    <a href="#quote-form-section" class="about-button">Contact Us</a>
     </div>
   </div>
 
@@ -81,7 +78,7 @@ ml('account', 'YOUR_ACCOUNT_ID');
           <li><a href="#">R & D</a></li>
           <li><a href="#">Careers</a></li>
           <li><a href="#">Blog </a></li>
-          <li><a href="#">Contact Us</a></li>
+          <!-- <li><a href="#">Contact Us</a></li> -->
         </ul>
         <div class="social-icons">
           <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -103,7 +100,7 @@ ml('account', 'YOUR_ACCOUNT_ID');
   <div class="hero-content">
     <h1>Providing Clean Water Using Renewable Energy <br> for a Sustainable Future.</h1>
     <p>We are committed to delivering innovative water purification solutions that harness the power of renewable energy, <br> ensuring access to clean water for all.</p>
-    <a href="#services" class="hero-btn">Discover Our Impact</a>
+    <a href="#services" class="about-button">Discover Our Impact</a>
   </div>
 </header>
 
@@ -152,19 +149,19 @@ ml('account', 'YOUR_ACCOUNT_ID');
     <!-- Product 1 -->
     <div class="product-card">
       <img src="images/product1.jpeg" alt="Product 1">
-      <p>UV-C Disinfection Water Bottle</p>
+      <h4>UV-C Disinfection Water Bottle</h4>
     </div>
 
     <!-- Product 2 -->
     <div class="product-card">
       <img src="images/product2.jpeg" alt="Product 2">
-      <p>RienLight Water Box</p>
+      <h4>RienLight Water Box</h4>
     </div>
 
     <!-- Product 3 -->
     <div class="product-card">
       <img src="images/product3.jpg" alt="Product 3">
-      <p>Water Box – 200GD</p>
+      <h4>Water Box – 200GD</h4>
     </div>
   </div>
 
@@ -211,7 +208,7 @@ ml('account', 'YOUR_ACCOUNT_ID');
         </div>
     </div>
 
-     <a href="#services" class="hero-btn">See More</a>
+     <a href="#services" class="about-button">See More</a>
     </section>
 
     <!-- Awards Carousel -->
@@ -311,7 +308,7 @@ ml('account', 'YOUR_ACCOUNT_ID');
       </div>
     </div>
 
-     <a href="#services" class="about-button">Read  </a>
+     <a href="#services" class="about-button">Read All </a>
 </section>
   </section>
 
@@ -331,6 +328,48 @@ ml('account', 'YOUR_ACCOUNT_ID');
     </form>
   </div>
 </footer> -->
+
+
+  <!-- Request a Quote / Consultation  -->
+  <section class="quote-form-section" id="quote-form-section">
+    <div class="container">
+      <h2>Request a Quote / Consultation</h2>
+      <p>Let’s work together to provide clean, sustainable water solutions for your community or organization.</p>
+      <form class="quote-form">
+        <div class="form-group">
+          <label for="organization">Organization / Business Name</label>
+          <input type="text" id="organization" name="organization" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="contact-person">Contact Person</label>
+          <input type="text" id="contact-person" name="contact-person" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="service">Interested In</label>
+          <select id="service" name="service" required>
+            <option value="">Select an option</option>
+            <option value="solar">Solar Water Purification</option>
+            <option value="custom">Custom Consultation</option>
+            <option value="maintenance">Maintenance & Support</option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <label for="message">Additional Details</label>
+          <textarea id="message" name="message" rows="4" placeholder="Tell us about your project, location, or specific needs..."></textarea>
+        </div>
+        <button type="submit"  class="about-button">Submit Request</button>
+      </form>
+    </div>
+  </section>
+  
 
 
 <!-- Footer -->
