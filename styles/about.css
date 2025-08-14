@@ -610,24 +610,34 @@ letter-spacing: -1px;
     .award-slider {
       display: flex;
       justify-content: center;
+      align-items: center;
       flex-wrap: nowrap; /* prevent wrapping */
-      padding: 0 200px;
+      padding: 0 10px;
       transition: transform 0.4s ease-in-out;
     }
 
     .award-slide {
-      min-width: calc(100% / 7); /* Show 5 images at a time */
+      min-width: calc(100% / 10); /* Show 5 images at a time */
       box-sizing: border-box;
       padding: 0 5px;
     }
 
     .award-slide img {
-      width: 50%;
+      width: 8rem;
+      max-width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+    
+
+      /* width: 50%;
       max-width: 300px;
       height: auto;
-      display: block;
-      border-radius: 6px;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center; */
     }
 
     /* Controls below slider */
@@ -654,13 +664,15 @@ letter-spacing: -1px;
 
     @media (max-width: 768px) {
       .award-slide {
-        min-width: calc(100% / 2); /* Show 2 images on medium screens */
+        min-width: calc(100% / 7); /* Show 2 images on medium screens */
       }
     }
 
     @media (max-width: 500px) {
       .award-slide {
-        min-width: 100%; /* Show 1 image on small screens */
+        /* min-width: 100%; Show 1 image on small screens */
+          min-width: calc(100% / 4); /* Show 2 images on medium screens */
+
       }
     }
 
@@ -693,7 +705,7 @@ letter-spacing: -1px;
     width: 8rem;
     max-width: 100%;
     height: auto;
-    margin: 1.5rem;
+    margin: 1rem;
   }
   
   .awards-logos img:hover {
@@ -1007,7 +1019,7 @@ footer p {
     }
 
     .card img {
-        height: 300px;
+        height: 250px;
     }
 
     .product-container {
