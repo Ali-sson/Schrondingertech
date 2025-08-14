@@ -43,29 +43,49 @@ counters.forEach(counter => {
   animate();
 });
 
-// Auto-slide awards logos
-// This function will automatically scroll the awards logos section
-function autoSlideAwards() {
-  const logoSections = document.querySelectorAll('.awards-logos');
+// 
 
-  logoSections.forEach(section => {
-    let scrollAmount = 0;
-    const scrollStep = 1; // px per frame
-    const scrollDelay = 20; // ms per frame
+ const awardSlider = document.querySelector('.award-slider');
+  const awardSlides = document.querySelectorAll('.award-slide');
+  const awardPrevBtn = document.querySelector('.award-prev');
+  const awardNextBtn = document.querySelector('.award-next');
 
-    function scrollLogos() {
-      section.scrollLeft += scrollStep;
-      scrollAmount += scrollStep;
+  let awardIndex = 0;
+  let awardVisibleSlides = getVisibleSlides();
 
-      if (section.scrollLeft + section.clientWidth >= section.scrollWidth) {
-        section.scrollLeft = 0; // reset to start
-        scrollAmount = 0;
-      }
+  function getVisibleSlides() {
+    if (window.innerWidth <= 500) return 1;
+    if (window.innerWidth <= 768) return 2;
+    return 3;
+  }
+
+  function awardShowSlide(i) {
+    if (i < 0) {
+      awardIndex = awardSlides.length - awardVisibleSlides;
+    } else if (i > awardSlides.length - awardVisibleSlides) {
+      awardIndex = 0;
     }
+    awardSlider.style.transform = `translateX(${-awardIndex * (100 / awardVisibleSlides)}%)`;
+  }
 
-    setInterval(scrollLogos, scrollDelay);
+  awardPrevBtn.addEventListener('click', () => {
+    awardIndex--;
+    awardShowSlide(awardIndex);
   });
-}
 
-// Run when DOM is ready
-document.addEventListener('DOMContentLoaded', autoSlideAwards);
+  awardNextBtn.addEventListener('click', () => {
+    awardIndex++;
+    awardShowSlide(awardIndex);
+  });
+
+  // Auto-slide every 5 seconds
+  // setInterval(() => {
+  //   awardIndex++;
+  //   awardShowSlide(awardIndex);
+  // }, 1000000);
+
+  // Adjust visibleSlides when window resizes
+  window.addEventListener('resize', () => {
+    awardVisibleSlides = getVisibleSlides();
+    awardShowSlide(awardIndex);
+  });

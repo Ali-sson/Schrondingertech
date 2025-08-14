@@ -56,7 +56,7 @@ body {
 h1 { font-size: 4rem;
 font-weight: 700; }
 h2 { font-size: 3rem; }
-h3 { font-size: 1.75rem; }
+h3 { font-size: 2.5rem; }
 h4 { font-size: 1.5rem; }
 h5 { font-size: 1.25rem; }
 h6 { font-size: 1rem; }
@@ -582,8 +582,8 @@ letter-spacing: -1px;
     }
 
     .card-content h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
+      font-size: 2rem;
+      margin-bottom: 1rem;
       color: #333;
     }
 
@@ -596,7 +596,74 @@ letter-spacing: -1px;
       transform: translateY(-5px);
     }
 
-    /* Award */
+/*  */
+
+    .award-slider-container {
+      width: 100%;
+      background: white;
+      border-radius: 8px;
+      padding: 20px 0;
+      overflow: hidden; /* hides overflow */
+      text-align: center;
+    }
+
+    .award-slider {
+      display: flex;
+      justify-content: center;
+      flex-wrap: nowrap; /* prevent wrapping */
+      padding: 0 200px;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .award-slide {
+      min-width: calc(100% / 7); /* Show 5 images at a time */
+      box-sizing: border-box;
+      padding: 0 5px;
+    }
+
+    .award-slide img {
+      width: 50%;
+      max-width: 300px;
+      height: auto;
+      display: block;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    /* Controls below slider */
+    .award-controls {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      gap: 15px;
+    }
+
+    .award-controls button {
+      background: transparent;
+      border: none;
+      font-size: 5rem;
+      cursor: pointer;
+      color: black;
+      transition: color 0.3s;
+    }
+
+    .award-controls button:hover {
+      color: black;
+    }
+
+
+    @media (max-width: 768px) {
+      .award-slide {
+        min-width: calc(100% / 2); /* Show 2 images on medium screens */
+      }
+    }
+
+    @media (max-width: 500px) {
+      .award-slide {
+        min-width: 100%; /* Show 1 image on small screens */
+      }
+    }
+
     
   /* Awards */
 
@@ -607,10 +674,10 @@ letter-spacing: -1px;
   ;
   }
   
-  .awards-section h2 {
-    font-size: 2rem;
+  .awards-section h2, .award-slider-container h2 {
+    /* font-size: 2rem; */
     color: #004080; /* deep blue */
-    margin-bottom: 20px;
+    margin-bottom: 3rem;
   }
   
   .awards-logos {
@@ -618,20 +685,22 @@ letter-spacing: -1px;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 460px;
+    margin: 20px;
+    gap: 400px;
   }
   
   .awards-logos img {
-    width: 100px;
+    width: 8rem;
+    max-width: 100%;
     height: auto;
-    max-width: 8rem;
-    /* filter: grayscale(100%);
-    transition: filter 0.3s ease; */
+    margin: 1.5rem;
   }
   
   .awards-logos img:hover {
     filter: grayscale(0%);
   }
+
+
 
   /* News and update */
 
@@ -644,7 +713,7 @@ letter-spacing: -1px;
   
   .blog-resources h2 {
     /* font-size: 2rem; */
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
   }
   
   .resource-articles {
@@ -893,14 +962,16 @@ footer p {
   .nav-links {
     display: none;
     position: absolute;
-    top: 60px;
-    left: 0;
+    top: 10px;
+    left: -15px;
     right: 0;
-    background: var(--background-light);
+    background: var(--dark-blue);
     flex-direction: column;
-    padding: 1rem 2rem;
+    padding: 1rem 0;
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100vw;
+    height: 100vh;
   }
 
   .nav-links.open {
@@ -908,8 +979,11 @@ footer p {
   }
 
   .nav-links ul {
-    flex-direction: column;
-    gap: 1.2rem;
+    flex-direction:column;
+    justify-items: flex-start;
+    align-items: flex-start;
+    gap: 4rem;
+
   }
 
   .social-icons {
@@ -927,7 +1001,7 @@ footer p {
   /* Card */
 
     .card {
-        width: 70%;
+        width: 100%;
         max-width: 500px;
         margin: 1rem auto;
     }
@@ -941,19 +1015,9 @@ footer p {
       align-items: center;
     }
 
-    .awards-logos {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 30px;
-  }
-
-  /* Hide scrollbar */
-  .awards-logos::-webkit-scrollbar {
-    display: none;
-  }
 
   .resource-articles{
-    width: 70%;
+    width: 100%;
     margin: 0 auto;
    
   }
@@ -967,4 +1031,13 @@ footer p {
   .hero-carousel {
     height: 80vh;
   }
+
+  .awards-logos {
+    align-items: center;
+    flex: nowrap;
+    gap: 20px;
+
+  }
 }
+
+
